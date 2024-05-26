@@ -132,7 +132,7 @@
 
 </head>
 <body>
-<div class="jumbotron">
+<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
     <div class="container">
         <h1>Spring Framework Guru</h1>
         <p class="lead" th:text="#{index.courses.tagline}">Tag line</p>
@@ -377,6 +377,12 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container" th:replace="fragments/paticka :: paticka">
+  <footer class="py-3 my-4">
+    <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+  </footer>
 </div>
 
 </body>
