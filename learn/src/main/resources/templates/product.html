@@ -146,28 +146,49 @@
             <h1 th:text="${product.courseName}">Spring Framework Guru - Course Name</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-
-                <img src="../static/images/SpringIntroThumb.png"
-                     th:src="@{/images/SpringIntroThumb.png}"
-                     class="center-block"/>
-
-        </div>
-        <div class="col-md-6">
-             <div>
-                 <h2 th:text="${product.courseSubtitle}">Course Title</h2>
-                 <p th:text="${product.courseDescription}">Adipiscing magna vestibulum fringilla tristique ad a primis ante mi inceptos condimentum curabitur
-                     curabitur eu sed nullam ridiculus nunc montes id nostra dui inceptos scelerisque posuere ipsum mus.
-                     A scelerisque libero viverra eu condimentum mollis suscipit mi consectetur semper dis ipsum nisi
-                     in nullam aliquet iaculis in eros euismod bibendum. Adipiscing volutpat fringilla bibendum duis a
-                     maecenas eu lorem accumsan fames sem faucibus ad mauris aliquam nam. Torquent amet adipiscing fusce
-                     fringilla venenatis tristique scelerisque natoque malesuada nostra duis nam augue ridiculus
-                     pulvinar ultrices laoreet in condimentum justo id. Nascetur condimentum maecenas magna metus curae
-                     est odio ad dui fames quam a aenean consequat faucibus nostra lorem adipiscing vestibulum
-                     ullamcorper etiam consectetur. </p>
+    <div class="row course-listing">
+      <div class="col-md-6">
+         <div class="row">
+             <div class="col-md-12">
+                 <img src="../static/images/SpringIntroThumb.png"
+                      th:src="@{'/images/'+${product.imageUrl}}"
+                      class="center-block"/>
              </div>
-        </div>
+         </div>
+          <div class="row course-listing-extra-info col-xs-12">
+              <div class="col-xs-8">
+                  <img align="left" alt="John Thompson"
+                       src="../static/images/instructor_jt.jpg"
+                       th:src="@{'/images/'+${product.author.image}}"
+                       class="img-circle"
+                       style="margin-left: 30px;"/>
+                  <div class="small course-author-name" th:text="${(product.author.firstName)
+                                                        + ' ' + (product.author.lastName)}">
+                      Author Name
+                  </div>
+              </div>
+              <div class="col-xs-4">
+                  <div class="small course-price" th:text="${'$' + (product.price)}">
+                      $PRICE
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="col-md-6">
+           <div>
+               <h2 th:text="${product.courseSubtitle}">Course Title</h2>
+               <p th:text="${product.courseDescription}">Adipiscing magna vestibulum fringilla tristique ad a primis ante mi inceptos condimentum curabitur
+                   curabitur eu sed nullam ridiculus nunc montes id nostra dui inceptos scelerisque posuere ipsum mus.
+                   A scelerisque libero viverra eu condimentum mollis suscipit mi consectetur semper dis ipsum nisi
+                   in nullam aliquet iaculis in eros euismod bibendum. Adipiscing volutpat fringilla bibendum duis a
+                   maecenas eu lorem accumsan fames sem faucibus ad mauris aliquam nam. Torquent amet adipiscing fusce
+                   fringilla venenatis tristique scelerisque natoque malesuada nostra duis nam augue ridiculus
+                   pulvinar ultrices laoreet in condimentum justo id. Nascetur condimentum maecenas magna metus curae
+                   est odio ad dui fames quam a aenean consequat faucibus nostra lorem adipiscing vestibulum
+                   ullamcorper etiam consectetur. </p>
+           </div>
+      </div>
     </div>
 
     <div class="row">

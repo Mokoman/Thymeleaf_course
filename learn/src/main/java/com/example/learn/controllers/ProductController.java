@@ -26,6 +26,7 @@ public class ProductController {
     public String getProductById(@PathVariable Integer id, Model model){
 
         model.addAttribute("product", productService.getProduct(id));
+        //model.addAttribute("authorFullName", productService.getProduct(id).getAuthor().getFullName());
 
         return "product";
     }

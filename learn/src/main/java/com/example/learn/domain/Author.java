@@ -37,4 +37,8 @@ public class Author {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String getFullName () {
+        return this.firstName + " " + this.lastName;
+    }
 }
