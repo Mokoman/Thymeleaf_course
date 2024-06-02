@@ -27,6 +27,7 @@ public class SpringMvcConfiguration implements WebMvcConfigurer {
     return localeChangeInterceptor;
   }
 
+  @SuppressWarnings("null")
   @Override
   public void addInterceptors(InterceptorRegistry registry) {    
     registry.addInterceptor(localeChangeInterceptor());

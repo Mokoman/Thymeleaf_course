@@ -11,9 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by jt on 1/26/16.
- */
 @Service
 public class ProductServiceImpl implements ProductService {
 
