@@ -16,21 +16,19 @@ public class CheckoutController {
 
   @RequestMapping("checkout")
   public String checkoutForm(Model model) {
-
     model.addAttribute("checkoutCommand", new CheckoutCommand());
-
-      return "checkoutform";
+    return "checkoutform";
   }
 
   @RequestMapping(value = "/docheckout", method=RequestMethod.POST)
   public String doCheckout(@Valid CheckoutCommand checkoutCommand, BindingResult bindingResult) {
 
-    /*
+    /**/
     System.out.println(checkoutCommand.getFirstName());
     System.out.println(checkoutCommand.getLastName());
     System.out.println(checkoutCommand.getEmail());
     System.out.println(checkoutCommand.getPassword());
-    */
+    
 
     if (bindingResult.hasErrors()) {
       return "checkoutform";
